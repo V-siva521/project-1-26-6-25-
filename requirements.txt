@@ -1,0 +1,26 @@
+# STEPS TO RUN THIS PROJECT AFTER UNZIPPING:
+#
+# 1. Unzip the repository and open a terminal in the project folder.
+# 2. (Recommended) Create a virtual environment:
+#      python3 -m venv venv
+#      source venv/bin/activate
+# 3. Upgrade pip, setuptools, and wheel:
+#      pip install --upgrade pip setuptools wheel
+# 4. Install all dependencies:
+#      pip install -r requirements.txt
+# 5. Download the spaCy English model:
+#      python -m spacy download en_core_web_sm
+# 6. Run the Flask app:
+#      python app.py
+# 7. Open your browser and go to http://localhost:5000
+#
+# For Jupyter/Notebook usage, open final.ipynb in VS Code or Jupyter Lab.
+
+flask>=2.3.0
+pandas>=2.2.0
+scikit-learn>=1.3.0
+spacy>=3.7.0
+numpy>=1.26.0
+prophet>=1.1.5
+python-dotenv>=1.0.0
+gunicorn>=21.2.0

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Recommender System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-indigo-600 mb-4">Course Recommender System</h1>
+            <p class="text-gray-600">Find the perfect machine learning courses for your needs</p>
+        </header>
+
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="mb-6">
+                    <label for="question" class="block text-gray-700 text-sm font-bold mb-2">What would you like to learn?</label>
+                    <input type="text" id="question" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+                           placeholder="e.g., 'I want to learn supervised learning basics'">
+                </div>
+                <div class="flex space-x-4">
+                    <button onclick="getCourseRecommendations()" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Get Course Recommendations
+                    </button>
+                    <button onclick="getQA()" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        Get Answer
+                    </button>
+                </div>
+            </div>
+
+            <div id="results" class="space-y-6 hidden">
+                <div id="answer-section" class="bg-white rounded-lg shadow-lg p-6 hidden">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Answer</h2>
+                    <p id="qa-result" class="text-gray-600"></p>
+                </div>
+
+                <div id="recommendations-section" class="bg-white rounded-lg shadow-lg p-6 hidden">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Recommended Courses</h2>
+                    <div id="recommendations" class="space-y-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
